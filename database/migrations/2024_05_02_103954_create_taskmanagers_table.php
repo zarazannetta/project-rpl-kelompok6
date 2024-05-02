@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('userdata', function (Blueprint $table) {
+        Schema::create('taskmanagers', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('password');
-            $table->dateTime('dateJoined');
-            $table->integer('points');
-            $table->integer('userRank')->nullable();
-            $table->index('userRank');
             $table->timestamps();
         });
     }
@@ -28,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('userdata');
+        Schema::dropIfExists('taskmanagers');
     }
 };

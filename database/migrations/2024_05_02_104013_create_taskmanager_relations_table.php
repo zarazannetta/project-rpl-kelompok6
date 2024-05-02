@@ -6,20 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
-        Schema::create('taskmanager_task', function (Blueprint $table) {
+        Schema::create('taskmanager_relations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('task_id');
             $table->unsignedBigInteger('task_manager_id');
            
             $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
-            $table->foreign('task_manager_id')->references('id')->on('taskmanager')->onDelete('cascade');
+            $table->foreign('task_manager_id')->references('id')->on('taskmanagers')->onDelete('cascade');
+        
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
-        Schema::dropIfExists('task_manager_task');
+        Schema::dropIfExists('taskmanager_relations');
     }
 };

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leaderboard', function (Blueprint $table) {
+        Schema::create('leaderboards', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             
@@ -19,8 +19,8 @@ return new class extends Migration
 
             $table->unsignedBigInteger('user_id');
         
-            $table->foreign('user_id')->references('id')->on('userdata')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('userRank')->references('userRank')->on('userdata')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('userdatas')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('userRank')->references('userRank')->on('userdatas')->onUpdate('cascade')->onDelete('cascade');
            
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('leaderboard');
+        Schema::dropIfExists('leaderboards');
     }
 };
