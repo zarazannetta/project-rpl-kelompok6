@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
-            $table->dateTime('dateJoined')->default(now());;
+            $table->date('dateJoined')->default(now());;
             $table->integer('points')->default(0);
             $table->integer('userRank')->nullable();
             $table->index('userRank');

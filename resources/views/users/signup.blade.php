@@ -13,14 +13,13 @@
     
         <div>
         <label for="username">Username</label>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Enter your username">
+        <input type="text" name="username" class="form-control" id="username" placeholder="Enter new username">
         </div>
 
         <div>
         <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password">
+        <input type="password" name="password" class="form-control" id="password" placeholder="Enter new password">
         </div>
-
         </label>
         </div>
 
