@@ -8,6 +8,6 @@ class DashboardLevelController extends Controller
 {
     public function dashboardlevel()
     {
-        return view('dashboard-level');
+        return view('/dashboard/dashboard-level');
     }
 }
