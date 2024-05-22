@@ -1,0 +1,78 @@
+*{
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.kepala{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.kepala img{
+    width: 50px;
+}
+
+.body{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.border{
+    margin: auto;
+    width: 500px;
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    border-style:solid;
+}
+
+.bodyy{
+    margin: auto;
+    margin-top: 50px;
+    text-align: left;
+    width: 300px;
+    height: 150px;
+}
+
+.bodyy input{
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer button{
+    width: 310px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    background-color: #F9DB6D;
+    opacity: 30%;
+}
+
+.footer button:hover{
+    background-color: #F9DB6D;
+    opacity: 100%;
+}
+
+.create{
+    text-align: center;
+}
+
+.create button{
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    opacity: 30%;
+}
+
+.create button:hover{
+    opacity: 100%;
+}

@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #ffffff;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: #fff;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.fa-solid{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+.nav p{
+    margin-left: 90px;
+    height: 20px;
+    width: 80px;
+}
+
+.nav a:hover{
+    background: #eee;
+}
+nav:hover{
+    width: 280px;
+    transition: all 0.5s ease;
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+
+nav:hover~.main-cont{
+    margin-left: 350px;
+    width: calc(100%-250px) ;
+    transition: all 0.5s ease;
+}
+
+.main-cont{
+    margin-left: 150px;
+    margin-top: 25px;
+}
+.heder{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profill{
+    display: flex;
+    margin-right: 40px;
+
+}
+.profill img{
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+.profill p{
+    font-size: 20px;
+    color: #836BE7;
+}
+
+.isi{
+    display: flex;
+    margin-top: 20px;
+}
+
+.easy{
+    width: 1090px;
+    height: 600px;
+    border: solid;
+    margin-right: 20px;
+    border-radius: 20px;
+    border-color: #e1ebd3;
+    background-color: #e1ebd3;
+}
+#add{
+    display: flex;
+    float: right;
+    width: 150px;
+    height: 40px;
+    margin-left: 40px;
+    margin-top: -2px;
+}
+#add i{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: -13px;
+}
+#add p{
+    margin: auto;
+    width: 100px;
+    height: 20px;
+    color: black;
+}
+.atas{
+    display: flex;
+    width: 1090px;
+    height: 40px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.atas p{
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 20px;
+    color: #78D700;
+}
+
+.easy .input{
+    margin-left: 15px;
+    width: 1060px;
+    display: flex;
+    border: solid;
+    border-radius: 20px;
+    border-color: rgba(28, 29, 34, 0.2);
+    background-color: #ffffff;
+}
+.easy input:checked ~ .task p{
+    text-decoration: line-through;
+}
+
+.easy .input p{
+    margin-left: 10px;
+}
+
+.easy input{
+    margin-left: 10px;
+    width: 25px;
+    height: 33px;    
+}
+
+.tanggal{
+    font-size: 15px;
+    opacity: 40%;
+    margin-left: 10px;
+}
+.input{
+    margin-bottom: 10px;
+}
+.edit{
+    margin: auto;
+    margin-right: 30px;
+    opacity: 70%;
+    width: 30px;
+}
+
+.heder a{
+    margin-right: -130px;
+    margin-top: -10px;
+}

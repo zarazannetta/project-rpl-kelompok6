@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #ffffff;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: #fff;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.fa-solid{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+.nav p{
+    margin-left: 90px;
+    height: 20px;
+    width: 80px;
+}
+
+.nav a:hover{
+    background: #eee;
+}
+nav:hover{
+    width: 280px;
+    transition: all 0.5s ease;
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+
+nav:hover~.main-cont{
+    margin-left: 350px;
+    width: calc(100%-250px) ;
+    transition: all 0.5s ease;
+}
+
+.main-cont{
+    width: 1090px;
+    margin-left: 150px;
+    margin-top: 55px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.pp{
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.pp a{
+    width: 100%;
+    cursor: pointer;
+}
+
+.pp input[type="file"] {
+    display: none;
+}
+
+.uname{
+    width: 600px;
+    margin: auto;
+}
+
+.uname p{
+    text-align: left;
+}
+
+.uname input{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 600px;
+    height: 40px;
+    margin-bottom: 25px;
+    padding: 10px;
+}
+
+.password input{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 600px;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.password{
+    width: 600px;
+    margin: auto;
+}
+
+.password p{
+    text-align: left;
+}
+
+.footer{
+    width: 1050px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.delete button{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #f6e7af;
+    margin: 50px;
+}
+.delete button:hover{
+    background-color: #fbde75;
+    width: 160px;
+    height: 45px;
+    transition: all 0.5s ease;
+    margin: 50px;
+}
+
+.save button{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #F9DB6D;
+    margin: 50px;
+}
+
+.save button:hover{
+    background-color: #ffd641;
+    width: 160px;
+    height: 45px;
+    transition: all 0.5s ease;
+    margin: 50px;
+}
+

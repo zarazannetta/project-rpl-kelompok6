@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\TaskManagerController;
 use App\Http\Controllers\DashboardLevelController;
+use App\Http\Controllers\DashboardDeadlineController;
+use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +34,18 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 //route dashboard level
 Route::get('/dashboard-level', [DashboardLevelController::class, 'dashboardlevel']);
+
+//route profile
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
+    Route::put('/profile', [ProfileController::class, 'editProfile']);
+    Route::delete('/profile/delete', [ProfileController::class, 'deleteAccount']);
+});
+
+//route addtask
+Route::get('/managetask', [TaskManagerController::class, 'showTaskForm']);
+Route::post('/managetask', [TaskManagerController::class, 'addTask']);
+
+
+//route leaderboard
+Route::get('/leaderboard', [LeaderboardController::class, 'leaderboard']);

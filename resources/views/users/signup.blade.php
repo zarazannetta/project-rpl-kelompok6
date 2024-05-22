@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskVenture|Sign Up</title>
+    <title>TaskVentures|Sign Up</title>
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
-<main class="form-signup">
+    <div class="kepala"> 
+        <img src="stok/Logoo.png" alt="">
+        <h1>Create an account</h1>
+    </div>
     <form action="/signup" method="post">
     @csrf
-    <h1>Create an account</h1>
-    
-        <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Enter new username">
-        </div>
+    <div class="body">
+            <div class="bodyy">
+                <p>Username</p>
+                <input type="text" name="username" id="username" placeholder="Enter new username">
 
-        <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Enter new password">
-        </div>
-        </label>
-        </div>
+                <div class="password">
+                <p>Password</p>
+                <label class="container">
+                </div>
 
-        <button class="button-submit-signup" type="submit">Create an account</button>
+                <input type="password" name="password" id="password" placeholder="Enter new password">
+            </div>
+        </div>
+        <div class="footer">
+            <button type="submit">Create an Account</button>
+            <p>Already have an Account? <a href="/login">Log in</a></p>
+        </div>
     </form>
-
-    <p>Already have an account? <a href="/login">Log in</a></p>
-</main>
-
 </body>
 </html>

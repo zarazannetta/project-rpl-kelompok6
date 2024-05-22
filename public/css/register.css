@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.kepala{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.kepala img{
+    width: 50px;
+}
+
+.body{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.bodyy{
+    margin: auto;
+    margin-top: 50px;
+    text-align: left;
+    width: 300px;
+    height: 250px;
+}
+
+.bodyy input{
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer button{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #F9DB6D;
+    opacity: 30%;
+}
+
+.footer button:hover{
+    background-color: #F9DB6D;
+    opacity: 100%;
+}

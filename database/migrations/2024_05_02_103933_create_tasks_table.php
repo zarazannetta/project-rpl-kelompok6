@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('taskDueDate');
             $table->text('taskDescription')->nullable();
             $table->boolean('isCompleted')->default(false);
-            $table->timestamps();
+            $table->timestamps();   
         });
     }
 

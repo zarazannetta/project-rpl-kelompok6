@@ -25,7 +25,7 @@ class SignupController extends Controller
 
         Userdata::create($validatedData);
     
-        $request->session()->flash('success', 'Account successfully created! Please Login');
+        $request->session()->flash('signupSuccess', 'Account successfully created! Please Login');
         return redirect('/login');
     }
 }
