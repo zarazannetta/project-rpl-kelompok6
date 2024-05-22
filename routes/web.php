@@ -35,8 +35,6 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //route dashboard level
 Route::get('/dashboard-level', [DashboardLevelController::class, 'dashboardlevel']);
 
-//route dashboard deadline
-Route::get('/dashboard-deadline', [DashboardDeadlineController::class, 'dashboarddeadline']);
 //route profile
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
