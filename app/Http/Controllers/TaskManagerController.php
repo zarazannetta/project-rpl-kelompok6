@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Task;
+use App\Models\Userdata;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -13,6 +14,7 @@ class TaskManagerController extends Controller
     {
         $task = null;
         $userId = Auth::id();
+        $userPoints = Userdata::where('id', $userId)->value('points');
         if ($id) {
             $task = Task::findOrFail($id);
         }   
@@ -21,6 +23,7 @@ class TaskManagerController extends Controller
             'active' => $task ? 'edit task' : 'add task',
             'task' => $task,
             'userId' => $userId,
+            'userPoints' => $userPoints,
         ]);
     }
     public function addTask(Request $request)

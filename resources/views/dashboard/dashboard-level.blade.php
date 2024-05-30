@@ -28,31 +28,36 @@
             <br><br>
             <p>My Tasks</p>
             <br>
-            <li><a href="hardTask.html">
+            <li><a href="{{ route('tasks.hard') }}">
                 <i class="fa-solid fa-square" style="color: #f87666;"></i>
                 <span class="nav-item">Hard</span>
             </a></li>
-            <li><a href="mediumTask.html">
+            <li><a href="{{ route('tasks.medium') }}">
                 <i class="fa-solid fa-square" style="color: #F9DB6D;"></i>
                 <span class="nav-item">Medium</span>
             </a></li>
-            <li><a href="easyTask.html">
+            <li><a href="{{ route('tasks.easy') }}">
                 <i class="fa-solid fa-square" style="color: #78D700;"></i>
                 <span class="nav-item">Easy</span>
             </a></li>
-            <li><a href="/login" class="logout">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span class="nav-item">Logout</span>
-            </a></li>
+            <li>
+                <a href="#" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </ul>
     </nav>
     <div class="main-cont">
         <div class="heder">
-            <h3>Welcome back, @if (session('username')){{ session('username') }}@endif</h3>
+        <h2>Welcome Back, {{ Auth::user()->username }}</h2>
             <a href="/profile">
             <div class="profill">
-                <p><b>(+)3000</b></p>
-                <img src="stok//girl.png" alt="">
+                <p><b>(+) {{ Auth::user()->points}}</b></p>
+                <img src="{{ asset(Auth::user()->profilePicture) }}" alt="User Profile">
             </div>
             </a>
         </div>
@@ -71,14 +76,20 @@
                 </div>
 
                 @foreach ($hardTasks as $task)
-                <a href="/managetask/{{ $task->id }}" class="input">
-                    <input type="checkbox" {{ $task->isCompleted ? 'checked' : '' }}>
-                    <div class="task">
-                        <p>{{ $task->taskName }}</p>
-                        <p>{{ $task->taskDescription }}</p>
-                        <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
-                    </div>
-                </a>
+                <form action="{{ route('tasks.update.dashboardlevel', $task->id) }}" method="POST"> 
+                    @csrf
+                    <input type="hidden" name="_method" value="POST"> 
+                    <a href="/managetask/{{ $task->id }}" class="task-link">
+                        <div class="input">
+                            <input type="checkbox" name="isCompleted" {{ $task->isCompleted ? 'checked' : '' }} onchange="this.form.submit()">
+                            <div class="task">
+                                <p><b style="font-weight: 600;">{{ $task->taskName }}</b></p>
+                                <p>{{ $task->taskDescription }}</p>
+                                <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </form>
                 @endforeach
 
             </div>
@@ -92,14 +103,20 @@
                 </div>
 
                 @foreach ($mediumTasks as $task)
-                <a href="/managetask/{{ $task->id }}" class="input">
-                    <input type="checkbox" {{ $task->isCompleted ? 'checked' : '' }}>
-                    <div class="task">
-                        <p>{{ $task->taskName }}</p>
-                        <p>{{ $task->taskDescription }}</p>
-                        <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
-                    </div>
-                </a>
+                <form action="{{ route('tasks.update.dashboardlevel', $task->id) }}" method="POST"> 
+                    @csrf
+                    <input type="hidden" name="_method" value="POST"> 
+                    <a href="/managetask/{{ $task->id }}" class="task-link">
+                        <div class="input">
+                            <input type="checkbox" name="isCompleted" {{ $task->isCompleted ? 'checked' : '' }} onchange="this.form.submit()">
+                            <div class="task">
+                                <p><b style="font-weight: 600;">{{ $task->taskName }}</b></p>
+                                <p>{{ $task->taskDescription }}</p>
+                                <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </form>
                 @endforeach
 
             </div>
@@ -112,14 +129,20 @@
                     </a>
                 </div>
                 @foreach ($easyTasks as $task)
-                <a href="/managetask/{{ $task->id }}" class="input">
-                    <input type="checkbox" {{ $task->isCompleted ? 'checked' : '' }}>
-                    <div class="task">
-                        <p>{{ $task->taskName }}</p>
-                        <p>{{ $task->taskDescription }}</p>
-                        <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
-                    </div>
-                </a>
+                <form action="{{ route('tasks.update.dashboardlevel', $task->id) }}" method="POST"> 
+                    @csrf
+                    <input type="hidden" name="_method" value="POST"> 
+                    <a href="/managetask/{{ $task->id }}" class="task-link">
+                        <div class="input">
+                            <input type="checkbox" name="isCompleted" {{ $task->isCompleted ? 'checked' : '' }} onchange="this.form.submit()">
+                            <div class="task">
+                                <p><b style="font-weight: 600;">{{ $task->taskName }}</b></p>
+                                <p>{{ $task->taskDescription }}</p>
+                                <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </form>
                 @endforeach
             </div>
         </div>

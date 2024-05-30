@@ -15,7 +15,7 @@ body{
 }
 
 nav{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     height: 100%;
@@ -24,6 +24,7 @@ nav{
     overflow: hidden;
     transition: width 0.2s linear;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .logo{
@@ -127,6 +128,39 @@ nav:hover~.main-cont{
     display: none;
 }
 
+#profilePictureLabel {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#editProfileLabel {
+    position: relative;
+    bottom: -25px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color:  rgb(85, 83, 83); 
+    transition: color 0.3s ease;
+}
+
+#editProfileLabel::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+}
+
+#editProfileLabel:hover::before {
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly transparent black */
+}
+
+
 .uname{
     width: 600px;
     margin: auto;
@@ -199,5 +233,59 @@ nav:hover~.main-cont{
     height: 45px;
     transition: all 0.5s ease;
     margin: 50px;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+}
+
+.image-option {
+    cursor: pointer;
+}
+
+.image-option img {
+    width: 100px; 
+    height: auto; 
+    border: 2px solid transparent; 
+}
+
+.image-option.selected img {
+    border-color: blue; 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 30px;
+    margin: 20% 20% 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
 }
 

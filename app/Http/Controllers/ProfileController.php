@@ -11,26 +11,29 @@ class ProfileController extends Controller
     public function showProfile()
     {
         $userdata = auth()->user();
-        return view('users/profile', [
-            'userdata' => $userdata,
-        ]); 
+        return view('users.profile', compact('userdata'));
     }
+
     public function editProfile(Request $request)
     {
         $userdata = auth()->user();
-        //update username
+
         $userdata->update([
             'username' => $request->input('username'),
         ]);
 
-        //update password
         if ($request->filled('password')) {
             $userdata->password = bcrypt($request->input('password'));
             $userdata->save();
         }
 
+        if ($request->filled('selectedImagePath')) {
+            $selectedImagePath = $request->input('selectedImagePath');
+            $userdata->profilePicture = $selectedImagePath;
+            $userdata->save();
+        }
+
         return redirect('/profile');
-        
     }
 
     public function deleteAccount(Request $request)
@@ -38,7 +41,7 @@ class ProfileController extends Controller
         $userdata = auth()->user();
         Auth::logout();
 
-        $userdata->delete(); 
+        $userdata->delete();
 
         return redirect('/login')->with('status', 'Your account has been deleted.');
     }

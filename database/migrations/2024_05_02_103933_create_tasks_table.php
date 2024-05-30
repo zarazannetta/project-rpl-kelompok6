@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('taskDescription')->nullable();
             $table->boolean('isCompleted')->default(false);
             $table->timestamps();   
-            $table->foreignId('user_id')->constrained('userdatas')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained('userdatas')->onDelete('cascade');
         });
 
     }

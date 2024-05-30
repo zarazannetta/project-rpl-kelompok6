@@ -263,12 +263,13 @@ nav:hover~.main-cont{
 }
 
 .hard .input{
-    margin-left: 15px;
+    margin-left: 5px;
     width: 315px;
     display: flex;
     border: solid;
     border-radius: 20px;
     border-color: rgba(28, 29, 34, 0.2);
+    padding: 10px;
 }
 .hard input:checked ~ .task p{
     text-decoration: line-through;
@@ -285,12 +286,13 @@ nav:hover~.main-cont{
 }
 
 .medium .input{
-    margin-left: 15px;
+    margin-left: 5px;
     width: 315px;
     display: flex;
     border: solid;
     border-radius: 20px;    
     border-color: rgba(28, 29, 34, 0.2);
+    padding: 10px;
 }
 .medium .input p{
     margin-left: 10px;
@@ -306,12 +308,13 @@ nav:hover~.main-cont{
 }
 
 .easy .input{
-    margin-left: 15px;
+    margin-left: 5px;
     width: 315px;
     display: flex;
     border: solid;
     border-radius: 20px;
     border-color: rgba(28, 29, 34, 0.2);
+    padding: 10px;
 }
 .easy .input p{
     margin-left: 10px;
@@ -327,8 +330,10 @@ nav:hover~.main-cont{
 }
 
 .hard input[type="checkbox"], .medium input[type="checkbox"], .easy input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    
 }
 
 .tanggal{
@@ -337,11 +342,12 @@ nav:hover~.main-cont{
     margin-left: 10px;
 }
 
-.input{
-    margin-bottom: 10px;
-}
-
 .heder a{
     margin-right: -130px;
     margin-top: -10px;
+}
+
+.edit-link {
+    display: inline-block;
+    width: 100%;
 }
