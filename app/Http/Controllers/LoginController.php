@@ -30,10 +30,14 @@ class LoginController extends Controller
             
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
-    
-                return redirect()->intended('/dashboard-level');
+                $user = Auth::user();
+                $username = Userdata::where('id', $user->id)->value('username');
+
+
+                return redirect()->intended('/dashboard-level')->with('username', $username);
             }
-    
+            
+
             return back()->with('loginError', 'Login failed!');
         }
 

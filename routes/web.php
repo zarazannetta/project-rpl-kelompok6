@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\TaskManagerController;
 use App\Http\Controllers\DashboardLevelController;
-use App\Http\Controllers\DashboardDeadlineController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\LoginController;
@@ -21,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard-level');
+    return view('/users/signup');
 });
 
 //route sign up
@@ -32,20 +31,21 @@ Route::post('/signup', [SignupController::class, 'submitSignupForm']);
 Route::get('/login', [LoginController::class, 'showLoginForm']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-//route dashboard level
-Route::get('/dashboard-level', [DashboardLevelController::class, 'dashboardlevel']);
 
-//route profile
+//route setelah login
 Route::middleware(['auth'])->group(function () {
+    // route dashboard 
+    Route::get('/dashboard-level', [DashboardLevelController::class, 'dashboardlevel'])->name('dashboard-level');
+
+    // Profile routes
     Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
     Route::put('/profile', [ProfileController::class, 'editProfile']);
     Route::delete('/profile/delete', [ProfileController::class, 'deleteAccount']);
-});
 
-//route addtask
-Route::get('/managetask', [TaskManagerController::class, 'showTaskForm']);
-Route::post('/managetask', [TaskManagerController::class, 'addTask']);
-
-
-//route leaderboard
-Route::get('/leaderboard', [LeaderboardController::class, 'leaderboard']);
+    // Task routes
+    Route::get('/managetask', [TaskManagerController::class, 'showTaskForm'])->name('showTaskForm');
+    Route::post('/managetask', [TaskManagerController::class, 'addTask'])->name('addTask');
+    Route::get('/managetask/{id}', [TaskManagerController::class, 'editTaskForm'])->name('editTaskForm');
+    Route::put('/managetask/{id}', [TaskManagerController::class, 'updateTask'])->name('updateTask');
+    Route::post('/managetask/{id}/delete', [TaskManagerController::class, 'deleteTask'])->name('deleteTask');
+}); 

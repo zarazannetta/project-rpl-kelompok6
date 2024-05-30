@@ -14,10 +14,16 @@ class Task extends Model
         'taskDueDate',
         'taskDescription',
         'isCompleted',
+        'user_id'
     ];
 
     public function managers()
     {
         return $this->belongsToMany(TaskManager::class, 'taskmanager_relations', 'task_id', 'task_manager_id');
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(Userdata::class, 'user_id');
     }
 }

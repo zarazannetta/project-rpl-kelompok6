@@ -48,7 +48,7 @@
     </nav>
     <div class="main-cont">
         <div class="heder">
-            <h2>Welcome Back, Furina</h2>
+            <h3>Welcome back, @if (session('username')){{ session('username') }}@endif</h3>
             <a href="/profile">
             <div class="profill">
                 <p><b>(+)3000</b></p>
@@ -69,13 +69,18 @@
                         <p>Add new task</p>
                     </a>
                 </div>
-                <div class="input">
-                    <input type="checkbox">
+
+                @foreach ($hardTasks as $task)
+                <a href="/managetask/{{ $task->id }}" class="input">
+                    <input type="checkbox" {{ $task->isCompleted ? 'checked' : '' }}>
                     <div class="task">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quas necessitatibus perspiciatis adipisci.?</p>
-                        <div class="tanggal">11 April 2024 23:59</div>
+                        <p>{{ $task->taskName }}</p>
+                        <p>{{ $task->taskDescription }}</p>
+                        <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
                     </div>
-                </div>
+                </a>
+                @endforeach
+
             </div>
             <div class="medium">
                 <div class="atas2">
@@ -85,13 +90,18 @@
                         <p>Add new task</p>
                     </a>
                 </div>
-                <div class="input">
-                    <input type="checkbox">
+
+                @foreach ($mediumTasks as $task)
+                <a href="/managetask/{{ $task->id }}" class="input">
+                    <input type="checkbox" {{ $task->isCompleted ? 'checked' : '' }}>
                     <div class="task">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quas necessitatibus perspiciatis adipisci.?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, temporibus quae ex culpa vero dolorem cupiditate nesciunt excepturi quos inventore. Dolorem, voluptatibus odit. Distinctio iste, nesciunt atque iure dolore libero?</p>
-                        <div class="tanggal">11 April 2024 23:59</div>
+                        <p>{{ $task->taskName }}</p>
+                        <p>{{ $task->taskDescription }}</p>
+                        <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
                     </div>
-                </div>
+                </a>
+                @endforeach
+
             </div>
             <div class="easy">
                 <div class="atas3">
@@ -101,13 +111,16 @@
                         <p>Add new task</p>
                     </a>
                 </div>
-                <div class="input">
-                    <input type="checkbox">
+                @foreach ($easyTasks as $task)
+                <a href="/managetask/{{ $task->id }}" class="input">
+                    <input type="checkbox" {{ $task->isCompleted ? 'checked' : '' }}>
                     <div class="task">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quas necessitatibus perspiciatis adipisci.?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo voluptatem, aliquid id totam necessitatibus! Eveniet consectetur aperiam autem, dolorum et ut, minus velit sapiente nemo quod totam animi quidem!</p>
-                        <div class="tanggal">11 April 2024 23:59</div>
+                        <p>{{ $task->taskName }}</p>
+                        <p>{{ $task->taskDescription }}</p>
+                        <div class="tanggal">{{ \Carbon\Carbon::parse($task->taskDueDate)->format('d F Y H:i') }}</div>
                     </div>
-                </div>
+                </a>
+                @endforeach
             </div>
         </div>
     </div>
