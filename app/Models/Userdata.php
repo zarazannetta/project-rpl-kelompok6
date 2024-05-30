@@ -19,6 +19,7 @@ class Userdata extends Authenticatable
     protected $fillable = [
         'username',
         'password',
+        'profilePicture',
     ];
 
     /**

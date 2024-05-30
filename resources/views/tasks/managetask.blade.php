@@ -29,30 +29,35 @@
             <br><br>
             <p>My Tasks</p>
             <br>
-            <li><a href="hardTask.html">
+            <li><a href="{{ route('tasks.hard') }}">
                 <i class="fa-solid fa-square" style="color: #f87666;"></i>
                 <span class="nav-item">Hard</span>
             </a></li>
-            <li><a href="mediumTask.html">
+            <li><a href="{{ route('tasks.medium') }}">
                 <i class="fa-solid fa-square" style="color: #F9DB6D;"></i>
                 <span class="nav-item">Medium</span>
             </a></li>
-            <li><a href="easyTask.html">
+            <li><a href="{{ route('tasks.easy') }}">
                 <i class="fa-solid fa-square" style="color: #78D700;"></i>
                 <span class="nav-item">Easy</span>
             </a></li>
-            <li><a href="/login" class="logout">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span class="nav-item">Logout</span>
-            </a></li>
+            <li>
+                <a href="#" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </ul>
     </nav>
     <div class="main-cont">
         <div class="heder">
             <h2>Start your Taskventures</h2>
             <div class="profill">
-                <p><b>(+)3000</b></p>
-                <img src="{{ asset('stok/girl.png') }}" alt="">
+                <p><b>(+) {{ Auth::user()->points }}</b></p>
+                <img src="{{ asset(Auth::user()->profilePicture) }}" alt="">
                 
             </div>
         </div>
@@ -70,7 +75,7 @@
                 <input type="hidden" name="user_id" value="{{ $userId }}">
                 <div class="judultask"><input placeholder="Title of Task" name="taskName" type="text" value="{{ $task ? $task->taskName : '' }}"></div>
                 <div class="deskripsi">
-                    <textarea placeholder="Input description of Task" name="taskDescription" id="desk">{{ $task ? $task->taskDescription : '' }}</textarea>
+                    <textarea placeholder="Add task details or description" name="taskDescription" id="desk">{{ $task ? $task->taskDescription : '' }}</textarea>
                 </div>
                 <div class="berdua">
                     <div class="deadline">

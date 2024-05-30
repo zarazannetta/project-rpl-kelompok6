@@ -15,7 +15,7 @@ body{
 }
 
 nav{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     height: 100%;
@@ -24,6 +24,7 @@ nav{
     overflow: hidden;
     transition: width 0.2s linear;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .logo{
@@ -107,6 +108,7 @@ nav:hover~.main-cont{
     margin-left: 150px;
     margin-top: 25px;
 }
+
 .heder{
     display: flex;
     justify-content: space-between;
@@ -126,92 +128,167 @@ nav:hover~.main-cont{
     font-size: 20px;
     color: #836BE7;
 }
-
-.isi{
-    display: flex;
-    margin-top: 20px;
-}
-
-.hard{
+.tombol{
     width: 1090px;
-    height: 600px;
-    border: solid;
-    margin-right: 20px;
-    border-radius: 20px;
-    border-color: #fadbd8;
-    background-color: #fadbd8;
+    height: 60px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid;
+    border-color: rgba(28, 29, 34, 0.2);
 }
-#add{
-    display: flex;
-    float: right;
-    width: 150px;
+.tambah{
+    display: inline-flex;
+    width: 40px;
     height: 40px;
-    margin-left: 40px;
-    margin-top: -2px;
+    border-radius: 50%;
+    background-color: #fbe492;
+    float: right;
+    text-align: justify;
+    align-items: center;
+    margin-top: 15px;
 }
-#add i{
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    margin-top: -13px;
+.tambah:hover{
+    background-color: #F9DB6D;
 }
-#add p{
-    margin: auto;
+
+.tambah p{
+    font-size: 25px;
+    margin-left: 1.5px;
+}
+.level{
+    display: inline-block;
+}
+.deadline p{
+    text-align: center;
+    margin-top: 7px;
+}
+.levels p{
+    text-align: center;
+}
+.deadline{
+    height: 40px;
+    width: 150px;
+    display: inline-block;
+    align-items: center;
+}
+.levels{
+    display: inline-flex;
+    height: 40px;
+}
+.deadline a{
+    width: 150px;
+    height: 55px;
+    border-radius: 30% 30% 0 0;
+    background-color: #F9DB6D;
+}
+
+.levels a{
     width: 100px;
-    height: 20px;
-    color: black;
+    height: 30px;
+    border-radius: 30% 30% 0 0;
+    background-color: #fbeebb;
 }
+.levels a:hover{
+    width: 120px;
+    height: 30px;
+    border-radius: 30% 30% 0 0;
+    background-color: #fbecad;
+    transition: all 0.2s ease;
+}
+
 .atas{
     display: flex;
-    width: 1090px;
+    width: 365px;
     height: 40px;
     margin-bottom: 20px;
-    justify-content: space-between;
-}
-
-.atas p{
-    margin-top: 5px;
-    margin-left: 15px;
-    margin-right: 20px;
-    color: #F87666;
-}
-
-.hard .input{
-    margin-left: 15px;
-    width: 1060px;
-    display: flex;
-    border: solid;
-    border-radius: 20px;
     border-color: rgba(28, 29, 34, 0.2);
-    background-color: #ffffff;
 }
-.hard input:checked ~ .task p{
+
+.isi{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 1090px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.isi2{
+    display: inline-flex;
+    height: 100%;
+    width: 1080px;
+}
+.isi2 p{
+    margin-top: 10px;
+    margin: auto;
+}
+
+.isi2 input{
+    width: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.isi2 input[type="checkbox"]{
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.isi3{
+    display: inline-flex;
+    margin-bottom: 8px;
+    height: 100%;
+    width: 1080px;
+    border-bottom: 2px solid;
+    border-color: rgba(28, 29, 34, 0.2);
+}
+.isi3 p{
+    margin-top: 10px;
+    margin: auto;
+}
+
+.isi3 input{
+    width: 20px;
+    margin-left: 20px;
+}
+
+.isi2 input:checked ~ .isi3 .namatask{
     text-decoration: line-through;
 }
 
-.hard .input p{
-    margin-left: 10px;
+
+.completed {
+    text-decoration: line-through;
 }
 
-.hard input{
-    margin-left: 10px;
-    width: 25px;
-    height: 33px;    
+.edit{
+    margin: auto;
+    opacity: 70%;
+    width: 40px;
+}
+
+.warna{
+    margin-top: -7px;
+}
+
+.namatask{
+    margin: auto;
+    width: 400px;
 }
 
 .tanggal{
-    font-size: 15px;
-    opacity: 40%;
-    margin-left: 10px;
-}
-.input{
-    margin-bottom: 10px;
-}
-.edit{
     margin: auto;
-    margin-right: 30px;
+    padding: 0 5px;
+    color: #EE1D52;
+    background-color: rgba(238, 29, 82, 0.1);
+    border-radius: 10px;
+    letter-spacing: 1.5px;
+}
+.jam{
+    margin: auto;
     opacity: 70%;
-    width: 30px;
+    letter-spacing: 1.5px;
 }
 
 .heder a{

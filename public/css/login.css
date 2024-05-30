@@ -16,7 +16,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin-top: 90px;
+    margin-top: 30px;
 }
 
 .border{
@@ -71,6 +71,7 @@
     height: 40px;
     border-radius: 20px;
     opacity: 30%;
+    margin-bottom: 20px;
 }
 
 .create button:hover{

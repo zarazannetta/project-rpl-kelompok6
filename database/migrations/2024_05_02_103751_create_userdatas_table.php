@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('userRank')->nullable();
             $table->index('userRank');
             $table->timestamps();
+            $table->string('profilePicture')->default('/stok/girl.png');
         });
     }
 

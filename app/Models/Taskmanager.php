@@ -41,3 +41,4 @@ class TaskManager extends Model
         // Logic to calculate user points based on tasks
     }
 }
+
