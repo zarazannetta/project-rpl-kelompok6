@@ -1,4 +1,4 @@
-## TaskVenture - Website To Do List Berbasis Permainan
+## TaskVentures - Website To Do List Berbasis Permainan
 
 <p>TaskVenture adalah projek website to-do list yang mengaplikasikan konsep points seperti di permainan/game</p>
 
