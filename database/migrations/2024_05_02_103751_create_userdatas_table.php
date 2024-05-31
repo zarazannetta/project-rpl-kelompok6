@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('password');
             $table->date('dateJoined')->default(now());;
             $table->integer('points')->default(0);
-            $table->integer('userRank')->nullable();
-            $table->index('userRank');
             $table->timestamps();
             $table->string('profilePicture')->default('/stok/girl.png');
         });

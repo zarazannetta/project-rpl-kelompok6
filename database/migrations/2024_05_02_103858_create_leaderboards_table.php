@@ -14,13 +14,11 @@ return new class extends Migration
         Schema::create('leaderboards', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            
-            $table->integer('userRank')->nullable();
 
             $table->unsignedBigInteger('user_id');
         
             $table->foreign('user_id')->references('id')->on('userdatas')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('userRank')->references('userRank')->on('userdatas')->onUpdate('cascade')->onDelete('cascade');
+            
            
         });
     }
