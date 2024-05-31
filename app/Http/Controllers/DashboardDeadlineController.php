@@ -11,11 +11,16 @@ class DashboardDeadlineController extends Controller
 {
     public function dashboarddeadline()
     {
-        $userId = Auth::id(); // Mendapatkan id pengguna yang saat ini login
-        $userPoints = Userdata::where('id', $userId)->value('points'); // Mendapatkan points pengguna yang saat ini login
-        $tasks = Task::orderBy('taskDueDate', 'asc')->get(); // Ambil semua task dan urutkan berdasarkan taskDueDate
-        
-        return view('/dashboard/dashboard-deadline', ['userPoints' => $userPoints, 'tasks' => $tasks]);
+        if (Auth::check()) {
+            $userId = Auth::id(); // Mendapatkan id pengguna yang saat ini login
+            $userPoints = Userdata::where('id', $userId)->value('points'); // Mendapatkan points pengguna yang saat ini login
+            $tasks = Task::orderBy('taskDueDate', 'asc')->where('user_id', $userId)->get(); // Ambil semua task dan urutkan berdasarkan taskDueDate
+            
+            return view('/dashboard/dashboard-deadline', ['userPoints' => $userPoints, 'tasks' => $tasks]);
+
+        } else {
+            return redirect('/login')->with('error', 'Please sign in to view your tasks.');
+        }
     }
 
     public function updateTaskCompletion(Request $request, $id)

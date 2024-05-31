@@ -52,9 +52,9 @@
         </ul>
     </nav>
     <div class="main-cont">
-        <div class="lb"><p><b>Leaderboard</b></p></div>
+        <div class="lb"><p><b>TOP 50 WORLD LEADERBOARD</b></p></div>
         @foreach($users as $user)
-            <div class="urutan">
+            <div class="{{ $user->username == $currentUser ? 'urutan' : 'urutan2' }}">
                 <div class="nama">
                     <img src="{{ asset($user->profilePicture) }}" alt="" style="border-radius: 20px;">
                     <p><b>{{ $user->username }}</b></p>
@@ -63,5 +63,6 @@
             </div>
         @endforeach
     </div>
+
 </body>
 </html>
