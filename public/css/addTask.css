@@ -248,7 +248,16 @@ nav:hover~.main-cont{
 }
 
 .save {
-    margin-left: auto;
+    position: absolute;
+    margin-top: 20px;
+    margin-right: 80px;
+    right: 0;
+    
+}
+
+.delete {
+    position: absolute;
+    left: 30;
 }
 
 /* Style untuk radio button */
@@ -305,3 +314,4 @@ nav:hover~.main-cont{
   #radio3:checked + label:before {
     background-color: #78D700;
   }
+  

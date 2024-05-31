@@ -30,15 +30,15 @@
             <br><br>
             <p>My Tasks</p>
             <br>
-            <li><a href="hardTask.html">
+            <li><a href="{{ route('tasks.hard') }}">
                 <i class="fa-solid fa-square" style="color: #f87666;"></i>
                 <span class="nav-item">Hard</span>
             </a></li>
-            <li><a href="mediumTask.html">
+            <li><a href="{{ route('tasks.medium') }}">
                 <i class="fa-solid fa-square" style="color: #F9DB6D;"></i>
                 <span class="nav-item">Medium</span>
             </a></li>
-            <li><a href="easyTask.html">
+            <li><a href="{{ route('tasks.easy') }}">
                 <i class="fa-solid fa-square" style="color: #78D700;"></i>
                 <span class="nav-item">Easy</span>
             </a></li>
@@ -61,8 +61,8 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <div class="image-grid">
-                    <div class="image-option" data-path="/stok/girl.png">
-                        <img src="/stok/girl.png" alt="Image 1">
+                    <div class="image-option" data-path="/stok/duck.jpeg">
+                        <img src="/stok/duck.jpeg" alt="Image 1">
                     </div>
                     <div class="image-option" data-path="/stok/frieren.jpeg">
                         <img src="/stok/frieren.jpeg" alt="Image 2">
@@ -73,7 +73,9 @@
                     <div class="image-option" data-path="/stok/bunny.jpeg">
                         <img src="/stok/bunny.jpeg" alt="Image 4">
                     </div>
-
+                    <div class="image-option" data-path="/stok/love.jpeg">
+                        <img src="/stok/love.jpeg" alt="Image 5">
+                    </div>
                 </div>
             </div>
         </div>
