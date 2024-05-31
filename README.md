@@ -36,7 +36,7 @@ Pada tahap awal, kami melakukan analisis terhadap kebutuhan user, mengumpulkan s
 
 <h2>Anggota Kelompok:</h2>
 <p>
-    - Zara Zannetta (G6401221033)
-    - Sazkia Ananda Zykry (G6401221072)
-    - Fadhil Mumtaz (G6401221083)
+    - Zara Zannetta (G6401221033)<br>
+    - Sazkia Ananda Zykry (G6401221072)<br>
+    - Fadhil Mumtaz (G6401221083)<br>
 </p>
